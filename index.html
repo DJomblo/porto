@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Troy Amadeo Tania — Game Developer Portfolio. Unity, C#, Tactical FPS & Interactive Experiences.">
+  <title>Troy Amadeo Tania | Game Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+</head>
+
+<body>
+  <div id="ripple-container" aria-hidden="true"></div>
+  <div class="hero-grid" aria-hidden="true"></div>
+
+  <!-- Floating game decor -->
+  <div class="floating-decor" aria-hidden="true">
+    <div class="decor-item decor-1" data-parallax="0.03">
+      <svg viewBox="0 0 64 64" fill="none">
+        <rect x="8" y="20" width="48" height="28" rx="8" stroke="currentColor" stroke-width="2" />
+        <circle cx="20" cy="34" r="6" stroke="currentColor" stroke-width="2" />
+        <circle cx="44" cy="34" r="6" stroke="currentColor" stroke-width="2" />
+        <rect x="26" y="14" width="12" height="8" rx="2" stroke="currentColor" stroke-width="2" />
+      </svg>
+    </div>
+    <div class="decor-item decor-2" data-parallax="0.05">
+      <svg viewBox="0 0 64 64" fill="none">
+        <circle cx="32" cy="32" r="24" stroke="currentColor" stroke-width="2" />
+        <circle cx="32" cy="32" r="8" stroke="currentColor" stroke-width="2" />
+        <rect x="30" y="4" width="4" height="12" fill="currentColor" />
+        <rect x="30" y="48" width="4" height="12" fill="currentColor" />
+        <rect x="4" y="30" width="12" height="4" fill="currentColor" />
+        <rect x="48" y="30" width="12" height="4" fill="currentColor" />
+      </svg>
+    </div>
+    <div class="decor-item decor-3" data-parallax="0.04">
+      <svg viewBox="0 0 64 64" fill="none">
+        <rect x="12" y="16" width="40" height="32" rx="4" stroke="currentColor" stroke-width="2" />
+        <circle cx="22" cy="28" r="4" fill="currentColor" />
+        <circle cx="42" cy="28" r="4" fill="currentColor" />
+        <rect x="20" y="38" width="24" height="4" rx="1" fill="currentColor" />
+      </svg>
+    </div>
+    <div class="decor-item decor-4" data-parallax="0.06">
+      <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round">
+        <rect x="12" y="36" width="40" height="18" rx="4" />
+        <circle cx="32" cy="18" r="8" />
+        <line x1="32" y1="26" x2="32" y2="36" />
+        <circle cx="22" cy="45" r="2" fill="currentColor" />
+        <circle cx="42" cy="45" r="2" fill="currentColor" />
+      </svg>
+    </div>
+    <div class="decor-item decor-5" data-parallax="0.04">
+      <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path d="M18 28a14 14 0 0 1 28 0H18z" />
+        <circle cx="27" cy="22" r="1.5" fill="currentColor" />
+        <circle cx="37" cy="22" r="1.5" fill="currentColor" />
+        <line x1="24" y1="14" x2="21" y2="9" />
+        <line x1="40" y1="14" x2="43" y2="9" />
+        <rect x="18" y="30" width="28" height="18" rx="4" />
+        <rect x="12" y="30" width="4" height="12" rx="2" />
+        <rect x="48" y="30" width="4" height="12" rx="2" />
+      </svg>
+    </div>
+    <div class="decor-item decor-6" data-parallax="0.05">
+      <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+        <path d="M32 8 L54 21 L54 48 L32 60 L10 48 L10 21 Z" />
+        <path d="M32 8 L32 34" />
+        <path d="M32 34 L10 21" />
+        <path d="M32 34 L54 21" />
+        <path d="M32 34 L32 60" />
+      </svg>
+    </div>
+    <div class="decor-item decor-7" data-parallax="0.03">
+      <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+        <path d="M10 46 L16 22 L27 34 L32 18 L37 34 L48 22 L54 46 Z" />
+        <line x1="10" y1="50" x2="54" y2="50" />
+        <circle cx="16" cy="20" r="2" fill="currentColor" />
+        <circle cx="32" cy="16" r="2" fill="currentColor" />
+        <circle cx="48" cy="20" r="2" fill="currentColor" />
+      </svg>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-brand">
+      <span class="brand-icon">▶</span>
+      <span class="brand-text">DJomblo</span>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#home" class="nav-link active">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#experience" class="nav-link">Experience</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn-sound btn-theme" id="theme-toggle" aria-label="Toggle dark/light mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5" />
+          <path
+            d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+        </svg>
+      </button>
+      <button class="btn-hamburger" id="menu-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="hero-bg" data-parallax="0.15">
+      <img src="Assets/Troy_banner.jpg" alt="" class="hero-banner-img">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge btn-sound">
+        <span class="pulse-dot"></span>
+        Available for Collaboration
+      </div>
+      <div class="hero-profile">
+        <div class="profile-ring">
+          <img src="Assets/Profile_Pic.jpeg" alt="Troy Amadeo Tania" class="profile-img">
+        </div>
+      </div>
+      <h1 class="hero-title">
+        <span class="title-line">Troy Amadeo</span>
+        <span class="title-line title-accent glitch" data-text="TANIA">TANIA</span>
+      </h1>
+      <p class="hero-subtitle">Game Developer · Software Developer · Game Enthusiast</p>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num">2</span>
+          <span class="stat-label">Games Shipped</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">7+</span>
+          <span class="stat-label">Languages & Tools</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">UMN</span>
+          <span class="stat-label">CS Student</span>
+        </div>
+      </div>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary btn-sound">View Projects</a>
+        <a href="Assets/Troy%20Amadeo%20Tania%20CV.pdf" download class="btn btn-outline btn-sound">Download CV</a>
+      </div>
+      <div class="scroll-indicator">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section about-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">01 // About Me</span>
+        <h2 class="section-title">My <span class="highlight">Profile</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-card main-card">
+          <div class="card-corner tl"></div>
+          <div class="card-corner tr"></div>
+          <div class="card-corner bl"></div>
+          <div class="card-corner br"></div>
+          <p>I'm a <strong>21 year-old Computer Science student</strong> at Multimedia Nusantara University,
+            specializing in <strong>game development</strong> with a focus on <strong>Unity</strong>. I'm passionate
+            about making games and enjoy turning my ideas into playable experiences while learning new tools and
+            techniques to improve my skills.</p>
+          <p>I'm fluent in both <strong>English</strong> and <strong>Indonesian</strong>, which allows me to collaborate
+            effectively in diverse environments. Originally from <strong>Pekalongan, Central Java</strong>, and
+            currently based in <strong>Gading Serpong, South Tangerang</strong>.</p>
+          <p>I'm eager to connect and work with professionals in the game development industry — sharing knowledge,
+            learning from others, and exploring opportunities to grow as a game developer.</p>
+        </div>
+        <div class="about-info-cards">
+          <div class="info-card btn-sound">
+            <div class="info-icon">🎓</div>
+            <div>
+              <h4>Education</h4>
+              <p>Multimedia Nusantara University</p>
+              <span class="info-sub">Computer Science · Game Dev Focus</span>
+            </div>
+          </div>
+          <div class="info-card btn-sound">
+            <div class="info-icon">📍</div>
+            <div>
+              <h4>Location</h4>
+              <p>Gading Serpong, South Tangerang</p>
+              <span class="info-sub">Originally from Pekalongan, Central Java</span>
+            </div>
+          </div>
+          <div class="info-card btn-sound">
+            <div class="info-icon">🌐</div>
+            <div>
+              <h4>Languages</h4>
+              <p>English & Indonesian</p>
+              <span class="info-sub">Fluent in both</span>
+            </div>
+          </div>
+          <div class="info-card btn-sound">
+            <div class="info-icon">🎯</div>
+            <div>
+              <h4>Focus</h4>
+              <p>Unity · Game Planner · Level Design</p>
+              <span class="info-sub">Game Planning & Programming</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section projects-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">02 // Projects</span>
+        <h2 class="section-title">Game <span class="highlight">Showcase</span></h2>
+      </div>
+      <div class="projects-grid">
+
+        <!-- UNPERSON -->
+        <article class="project-card featured">
+          <div class="project-gallery">
+            <div class="gallery-track" id="gallery-unperson">
+              <img src="Assets/UNPERSON_0.png" alt="UNPERSON Screenshot 1" class="gallery-slide active">
+              <img src="Assets/UNPERSON_1.png" alt="UNPERSON Screenshot 2" class="gallery-slide">
+            </div>
+            <div class="gallery-controls">
+              <button class="gallery-btn btn-sound" data-gallery="unperson" data-dir="-1"
+                aria-label="Previous screenshot">‹</button>
+              <div class="gallery-dots" id="dots-unperson"></div>
+              <button class="gallery-btn btn-sound" data-gallery="unperson" data-dir="1"
+                aria-label="Next screenshot">›</button>
+            </div>
+            <div class="project-status status-done">Finished</div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span class="tag">FPS</span>
+              <span class="tag">Tactical</span>
+              <span class="tag">PvE</span>
+              <span class="tag">Unity</span>
+            </div>
+            <h3 class="project-title">UNPERSON</h3>
+            <p class="project-desc">UNPERSON is a tactical FPS that focuses on PvE combat and decision making. The game
+              emphasizes realistic movement and careful positioning rather than a fast paced FPS. Features two distinct
+              maps, each with its own atmosphere, layout, and storytelling/lore.</p>
+            <div class="project-meta">
+              <div class="meta-item">
+                <span class="meta-label">Role</span>
+                <span>Group Leader, Programmer, Level Design, Game Planner</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Stack</span>
+                <span>Unity, C#, Unity Version Control</span>
+              </div>
+            </div>
+            <a href="https://umn.itch.io/unperson" target="_blank" rel="noopener noreferrer"
+              class="btn btn-primary btn-sound project-link">
+              Play on itch.io ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- UNPERSON VR -->
+        <article class="project-card">
+          <div class="project-gallery">
+            <div class="gallery-track" id="gallery-unperson-vr">
+              <img src="Assets/UNPERSON_2.png" alt="UNPERSON VR Screenshot 1" class="gallery-slide active">
+              <img src="Assets/UNPERSON_3.png" alt="UNPERSON VR Screenshot 2" class="gallery-slide">
+              <img src="Assets/UNPERSON_4.png" alt="UNPERSON VR Screenshot 3" class="gallery-slide">
+              <img src="Assets/UNPERSON_5.png" alt="UNPERSON VR Screenshot 4" class="gallery-slide">
+            </div>
+            <div class="gallery-controls">
+              <button class="gallery-btn btn-sound" data-gallery="unperson-vr" data-dir="-1"
+                aria-label="Previous screenshot">‹</button>
+              <div class="gallery-dots" id="dots-unperson-vr"></div>
+              <button class="gallery-btn btn-sound" data-gallery="unperson-vr" data-dir="1"
+                aria-label="Next screenshot">›</button>
+            </div>
+            <div class="project-status status-done">Finished</div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span class="tag">VR</span>
+              <span class="tag">FPS</span>
+              <span class="tag">Tactical</span>
+              <span class="tag">Meta Quest</span>
+            </div>
+            <h3 class="project-title">UNPERSON VR</h3>
+            <p class="project-desc">UNPERSON VR is a PvE First Person Shooter with focus on Tactical Combat. An
+              immersive VR adaptation bringing the tactical gameplay of UNPERSON into virtual reality on Meta Quest.</p>
+            <div class="project-meta">
+              <div class="meta-item">
+                <span class="meta-label">Role</span>
+                <span>Group Leader, Game Planner, Programmer, Level Design</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Stack</span>
+                <span>Unity, Meta Quest, Unity Version Control, C#</span>
+              </div>
+            </div>
+            <span class="btn btn-disabled">Not Currently Available</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section skills-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">03 // Skills</span>
+        <h2 class="section-title">Dev <span class="highlight">Arsenal</span></h2>
+      </div>
+
+      <div class="skills-category">
+        <h3 class="skills-cat-title"><span class="cat-icon">⌨</span> Programming</h3>
+        <div class="skills-grid">
+          <div class="skill-item btn-sound"><i class="devicon-csharp-plain colored"></i><span>C#</span></div>
+          <div class="skill-item btn-sound"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+          <div class="skill-item btn-sound"><i class="devicon-html5-plain colored"></i><span>HTML</span></div>
+          <div class="skill-item btn-sound"><i class="devicon-java-plain colored"></i><span>Java</span></div>
+          <div class="skill-item btn-sound"><i class="devicon-css3-plain colored"></i><span>CSS</span></div>
+          <div class="skill-item btn-sound"><i class="devicon-kotlin-plain colored"></i><span>Kotlin</span></div>
+          <div class="skill-item btn-sound"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
+        </div>
+      </div>
+
+      <div class="skills-category">
+        <h3 class="skills-cat-title"><span class="cat-icon">🎮</span> Game Engines</h3>
+        <div class="skills-grid">
+          <div class="skill-item skill-unity btn-sound">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32">
+              <path d="M12 2L1 7l11 5 9-4.09V17h2V7L12 2zM3.5 8.5L12 12.5l8.5-4v7L12 20.5 3.5 15.5v-7z" />
+            </svg>
+            <span>Unity</span>
+          </div>
+          <div class="skill-item skill-renpy btn-sound">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32">
+              <path d="M4 4h16v16H4V4zm2 2v12h12V6H6zm2 2h8v2H8V8zm0 4h8v2H8v-2zm0 4h5v2H8v-2z" />
+            </svg>
+            <span>Ren'Py</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skills-category">
+        <h3 class="skills-cat-title"><span class="cat-icon">🛠</span> Tools</h3>
+        <div class="skills-grid">
+          <div class="skill-item btn-sound"><i class="devicon-github-original"></i><span>GitHub</span></div>
+          <div class="skill-item btn-sound"><i class="devicon-figma-plain colored"></i><span>Figma</span></div>
+          <div class="skill-item btn-sound"><i class="devicon-androidstudio-plain colored"></i><span>Android
+              Studio</span></div>
+          <div class="skill-item btn-sound"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
+          <div class="skill-item btn-sound">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z" />
+            </svg>
+            <span>Canva</span>
+          </div>
+          <div class="skill-item btn-sound">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+              <path d="M4 4h16v2H4V4zm0 4h10v2H4V8zm0 4h14v2H4v-2zm0 4h10v2H4v-2z" />
+            </svg>
+            <span>Notion</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="section experience-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">04 // Experience</span>
+        <h2 class="section-title">Experience and <span class="highlight">Certificates</span></h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item btn-sound">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Aug 2023 — Aug 2027</span>
+            <h4>Multimedia Nusantara University (UMN)</h4>
+            <p class="timeline-role">Bachelor of Computer Science</p>
+            <p>Studying Computer Science with specialization in Game Development. Focus on Unity engine, game design,
+              and software engineering fundamentals.</p>
+          </div>
+        </div>
+        <div class="timeline-item btn-sound">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Organization</span>
+            <h4>UMN Game Development Club</h4>
+            <p class="timeline-role">Programmer</p>
+            <p>Active member contributing to game development projects and collaborating with fellow developers in the
+              club.</p>
+          </div>
+        </div>
+        <div class="timeline-item btn-sound">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2024</span>
+            <h4>UMN Festival 2024</h4>
+            <p class="timeline-role">Security Staff</p>
+            <p>Contributed to event operations and security management for the university festival.</p>
+          </div>
+        </div>
+        <div class="timeline-item btn-sound">
+          <div class="timeline-marker cert-marker"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Certifications</span>
+            <h4>Huawei Certifications</h4>
+            <p class="timeline-role">HCIA AI 3.5 · HCIA openGauss V1.0</p>
+            <a href="https://drive.google.com/drive/folders/1KH6xb9D-cBD0dWizPRgF4SWcXwsItuTJ?usp=drive_link"
+              target="_blank" rel="noopener noreferrer" class="cert-link btn-sound">
+              View Certificates on Google Drive ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">05 // Contact</span>
+        <h2 class="section-title">Let's <span class="highlight">Connect</span></h2>
+        <p class="section-desc">Ready to collaborate on game projects? Press start on a conversation!</p>
+      </div>
+      <div class="contact-grid">
+        <a href="mailto:troyamadeobusiness@gmail.com" class="contact-card btn-sound email-card">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="4" width="20" height="16" rx="2" />
+              <path d="M22 4L12 13 2 4" />
+            </svg>
+          </div>
+          <div>
+            <h4>Email</h4>
+            <p>troyamadeobusiness@gmail.com</p>
+          </div>
+          <span class="contact-arrow">→</span>
+        </a>
+        <a href="https://www.linkedin.com/in/troyamadeo/" target="_blank" rel="noopener noreferrer"
+          class="contact-card btn-sound">
+          <div class="contact-icon linkedin">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+          </div>
+          <div>
+            <h4>LinkedIn</h4>
+            <p>/in/troyamadeo</p>
+          </div>
+          <span class="contact-arrow">→</span>
+        </a>
+        <a href="https://github.com/DJomblo" target="_blank" rel="noopener noreferrer" class="contact-card btn-sound">
+          <div class="contact-icon github">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+            </svg>
+          </div>
+          <div>
+            <h4>GitHub</h4>
+            <p>@DJomblo</p>
+          </div>
+          <span class="contact-arrow">→</span>
+        </a>
+        <a href="https://djomblo.itch.io" target="_blank" rel="noopener noreferrer" class="contact-card btn-sound">
+          <div class="contact-icon itch">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M2 6v12h2V6H2zm3 0v12h2.5l1.5-4.5 1.5 4.5H13V6h-2v7.5L9.5 9 8 13.5V6H5zm12 0v12h2V6h-2zm3 0v12h2V6h-2z" />
+            </svg>
+          </div>
+          <div>
+            <h4>itch.io</h4>
+            <p>djomblo.itch.io</p>
+          </div>
+          <span class="contact-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="brand-icon">▶</span>
+        <span>Troy Amadeo Tania</span>
+      </div>
+      <p class="footer-text">Crafted with passion for game development 🎮</p>
+      <p class="footer-copy">&copy; 2026 Troy Amadeo Tania. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+
+</html>
